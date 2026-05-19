@@ -1,0 +1,44 @@
+# Ambiente virtuale
+venv/
+.venv/
+env/
+
+# Python bytecode e cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build / packaging
+*.egg-info/
+dist/
+build/
+
+# Dati processed (rigenerabili eseguendo i notebook)
+data/processed/*.parquet
+
+# Cache locale dei dati grezzi: ESCLUSA per dimensioni e per rispetto della
+# licenza degli Open Data del Comune di Bologna. Scaricarli con:
+#   python -m src.data_loading
+data/raw/*.parquet
+data/raw/*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Log
+*.log

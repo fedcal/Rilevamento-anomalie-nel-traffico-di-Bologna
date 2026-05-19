@@ -1,0 +1,32 @@
+{
+  "periodo_valutazione": "2025-10-01 \u2192 2025-12-31",
+  "n_spire": 18,
+  "metriche_sintetiche": {
+    "precision": 0.18246445497630331,
+    "recall": 0.4935897435897436,
+    "f0.5": 0.20878524945770066,
+    "auc_pr": 0.21773696849895058,
+    "alert_rate": 0.021235909822866345,
+    "recall_per_tipo": {
+      "drop": 0.6451612903225806,
+      "shift": 0.423728813559322,
+      "spike": 0.6206896551724138,
+      "zero_plateau": 0.4925373134328358
+    },
+    "n_anomalie_gt": 312,
+    "n_alert_predetti": 844
+  },
+  "eventi_reali": {
+    "totale_eventi": 18,
+    "eventi_colpiti": 14,
+    "hit_rate": 0.7777777777777778
+  },
+  "stabilita": {
+    "jaccard_P99_P995": 0.4995248653785239,
+    "jaccard_P95_P999": 0.019949335022165927
+  },
+  "configurazione_sistema": {
+    "percentile_soglia": 99.0,
+    "soglia_accuratezza_alert": 80.0
+  }
+}

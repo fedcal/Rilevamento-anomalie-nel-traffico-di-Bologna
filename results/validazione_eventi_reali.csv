@@ -1,0 +1,19 @@
+evento,data,impatto_atteso,n_alert_in_finestra,colpito,spire_che_hanno_segnalato
+Sciopero TPL nazionale,2024-04-12,shift,0,False,[]
+Festa della Repubblica (parata),2024-06-02,drop,0,False,[]
+Bologna FC home match vs Juventus,2024-05-20,spike,0,False,[]
+Ferragosto 2024,2024-08-15,drop,10,True,"[104, 208, 230, 237, 240, 255, 261]"
+Black Friday 2024 (concentramenti commerciali),2024-11-29,spike,4,True,"[104, 275]"
+Capodanno 2025,2025-01-01,drop,47,True,"[20, 104, 157, 208, 228, 230, 232, 237, 240, 255, 261, 273, 274, 275, 276, 277, 326]"
+Pasqua 2024,2024-03-31,drop,1,True,[255]
+Festa San Petronio 2024,2024-10-04,drop,21,True,"[104, 208, 228, 230, 232, 237, 240, 255, 261, 273, 275, 277, 326]"
+Sciopero generale 2024-10-18,2024-10-18,shift,1,True,[275]
+25 Aprile 2024 (Liberazione),2024-04-25,drop,39,True,"[20, 157, 208, 228, 230, 232, 237, 240, 255, 261, 273, 274, 277, 326]"
+1 Maggio 2024,2024-05-01,drop,44,True,"[20, 104, 157, 208, 228, 230, 232, 237, 240, 255, 261, 273, 274, 277, 326]"
+Inaugurazione anno accademico UniBO 2024,2024-09-30,spike,1,True,[103]
+Mercato Antiquario Piazza S.Stefano (1° dom mese),2024-09-01,shift,2,True,[273]
+Immacolata 2024,2024-12-08,drop,15,True,"[103, 104]"
+Natale 2024,2024-12-25,drop,73,True,"[20, 104, 157, 208, 228, 230, 232, 237, 240, 255, 261, 273, 274, 275, 276, 277, 326]"
+Pasqua 2025,2025-04-20,drop,6,True,"[104, 228, 230, 232, 255]"
+Festa della Repubblica 2025,2025-06-02,drop,40,True,"[20, 103, 104, 157, 208, 228, 230, 232, 237, 240, 255, 261, 273, 274, 277, 326]"
+Capodanno 2025-2026 (notte di San Silvestro),2025-12-31,drop,0,False,[]

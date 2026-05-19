@@ -1,0 +1,30 @@
+# Dipendenze del project work — Predire l'imprevedibile
+# Versioni esatte testate sull'ambiente di sviluppo (Python 3.13).
+# Per ricostruire un ambiente identico:
+#   python3 -m venv venv
+#   ./venv/bin/pip install -r requirements.txt
+
+# Core data
+pandas>=2.2,<3
+numpy>=1.26,<3
+pyarrow>=15,<22       # backend Parquet
+
+# Modeling
+scikit-learn>=1.4,<2  # IsolationForest, metriche
+statsmodels>=0.14,<1  # STL decomposition
+lightgbm>=4,<5        # forecasting baseline
+
+# Networking / dati esterni
+requests>=2.31,<3
+
+# Calendario festivita
+holidays>=0.46,<1
+
+# Visualization
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+
+# Notebook
+jupyter>=1,<2
+nbconvert>=7,<8
+ipykernel>=6,<7

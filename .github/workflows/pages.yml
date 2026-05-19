@@ -1,0 +1,66 @@
+name: Build & Deploy GitHub Pages
+
+# Esegue ad ogni push su master e on-demand (workflow_dispatch).
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+# Permessi minimi necessari per il deploy su Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita esecuzioni concorrenti dello stesso workflow.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install MkDocs Material + plugin Jupyter
+        run: |
+          pip install --upgrade pip
+          pip install "mkdocs-material>=9.5" "mkdocs-jupyter>=0.25" pymdown-extensions
+
+      # I notebook stanno in `notebooks/` ma MkDocs vede solo i file in
+      # `docs_dir` (`docs/`). Copiamoli dentro `docs/notebooks/` prima del build.
+      - name: Copia notebook dentro docs/
+        run: |
+          mkdir -p docs/notebooks
+          cp notebooks/*.ipynb docs/notebooks/
+
+      # Build statico del sito in `site/`.
+      - name: Build sito
+        run: mkdocs build --strict
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

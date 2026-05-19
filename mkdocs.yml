@@ -1,0 +1,81 @@
+site_name: Predire l'imprevedibile — Anomalie nel traffico di Bologna
+site_description: Project work di anomaly detection sui flussi delle spire del Comune di Bologna (DataMasters - ML Engineer)
+site_author: Federico Calò
+site_url: https://fedcal.github.io/Rilevamento-anomalie-nel-traffico-di-Bologna/
+repo_url: https://github.com/fedcal/Rilevamento-anomalie-nel-traffico-di-Bologna
+repo_name: fedcal/Rilevamento-anomalie-nel-traffico-di-Bologna
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: it
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Passa al tema scuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Passa al tema chiaro
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang: it
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false
+      include: ["notebooks/*.ipynb"]
+      ignore: ["Notebook_Demo.ipynb"]
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Piano di lavoro: PIANO.md
+  - Problem Framing: problem_framing.md
+  - Notebooks:
+      - 01 - EDA: notebooks/01_eda.ipynb
+      - 02 - Baselines: notebooks/02_baselines.ipynb
+      - 03 - Sistema finale: notebooks/03_sistema_finale.ipynb
+      - 04 - Valutazione: notebooks/04_valutazione.ipynb
+  - Report tecnico: report_tecnico.md
